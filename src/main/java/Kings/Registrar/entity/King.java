@@ -14,11 +14,11 @@ import jakarta.persistence.*;
 
         private String name;
 
-        private Integer numb;
+        private String numb;
 
         // Constructors, getters, and setters
 
-    public King(Long id, String name, Integer numb) {
+    public King(Long id, String name, String numb) {
         this.id = id;
         this.name = name;
         this.numb =  numb;
@@ -45,11 +45,11 @@ import jakarta.persistence.*;
         this.name = name;
     }
 
-    public int getNumb() {
+    public String getNumb() {
         return numb;
     }
 
-    public void setNumb(Integer numb) {
+    public void setNumb(String numb) {
         this.numb = numb;
     }
 }

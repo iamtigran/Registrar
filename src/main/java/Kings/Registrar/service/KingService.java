@@ -1,5 +1,6 @@
 package Kings.Registrar.service;
 
+import Kings.Registrar.Other.RomanNumeralConverter;
 import Kings.Registrar.entity.King;
 import Kings.Registrar.repository.KingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +24,14 @@ public class KingService {
         Integer existingKing = getAllKings().indexOf(king);
         String name = king.getName();
         if (existingKing != null) {
-            king.setNumb(countKingsByName(name)+1);
+            RomanNumeralConverter converter = new RomanNumeralConverter();
+            int count = countKingsByName(name)+1;
+            king.setNumb(converter.convertToRoman(count));
             king.setName(name);
         }
         else {
             king.setName(name);
-            king.setNumb(1);
+            king.setNumb("I");
         }
 
         return kingRepository.save(king);
