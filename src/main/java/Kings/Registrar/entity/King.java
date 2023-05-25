@@ -1,6 +1,7 @@
 package Kings.Registrar.entity;
 
 
+import Kings.Registrar.repository.KingRepository;
 import jakarta.persistence.*;
 
 @Entity
@@ -24,6 +25,7 @@ import jakarta.persistence.*;
     }
 
     public King(){
+
 
     }
 

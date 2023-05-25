@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Kings List</title>
+</head>
+<body>
+<h1>Kings List</h1>
+
+<ul id="kings-list">
+  <li th:each="king : ${kings}" th:text="${king.name + ' ' + king.numb}"></li>
+</ul>
+
+<form id="add-king-form" th:action="@{/kings}" method="post">
+  <input type="text" id="name" name="name" placeholder="King's name" required>
+  <input type="number" id="numb" name="numb" placeholder="King's number" required>
+  <button type="submit">Add King</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>
+</html>

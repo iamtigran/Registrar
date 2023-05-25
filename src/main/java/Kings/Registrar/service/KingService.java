@@ -5,6 +5,8 @@ import Kings.Registrar.repository.KingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -18,16 +20,22 @@ public class KingService {
     }
 
     public King addKing(King king) {
-        King existingKing = kingRepository.findByName(king.getName());
+        Integer existingKing = getAllKings().indexOf(king);
         String name = king.getName();
         if (existingKing != null) {
-            king.setNumb(countKingsByName(name));
+            king.setNumb(countKingsByName(name)+1);
+            king.setName(name);
         }
-        king.setName(name);
+        else {
+            king.setName(name);
+            king.setNumb(1);
+        }
+
         return kingRepository.save(king);
     }
 
     public int countKingsByName(String name) {
-        return kingRepository.countByName(name);
+       return kingRepository.countByName(name);
+
     }
 }
