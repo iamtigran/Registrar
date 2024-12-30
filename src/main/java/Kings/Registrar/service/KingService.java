@@ -6,8 +6,6 @@ import Kings.Registrar.repository.KingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -25,11 +23,10 @@ public class KingService {
         String name = king.getName();
         if (existingKing != null) {
             RomanNumeralConverter converter = new RomanNumeralConverter();
-            int count = countKingsByName(name)+1;
+            int count = countKingsByName(name) + 1;
             king.setNumb(converter.convertToRoman(count));
             king.setName(name);
-        }
-        else {
+        } else {
             king.setName(name);
             king.setNumb("I");
         }
@@ -38,7 +35,7 @@ public class KingService {
     }
 
     public int countKingsByName(String name) {
-       return kingRepository.countByName(name);
+        return kingRepository.countByName(name);
 
     }
 }

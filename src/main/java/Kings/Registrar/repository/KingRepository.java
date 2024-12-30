@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 public interface KingRepository extends JpaRepository<King, Long> {
     King findByName(String name);
 
-  @Query("SELECT COUNT(k) FROM King k WHERE k.name = :name")
+    @Query("SELECT COUNT(k) FROM King k WHERE k.name = :name")
     int countByName(@Param("name") String name);
 
 }

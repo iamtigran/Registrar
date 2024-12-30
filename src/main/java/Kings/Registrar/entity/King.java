@@ -1,30 +1,29 @@
 package Kings.Registrar.entity;
 
 
-import Kings.Registrar.repository.KingRepository;
 import jakarta.persistence.*;
 
 @Entity
-    @Table(name = "kings")
-    public class King {
+@Table(name = "kings")
+public class King {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-        private String name;
+    private String name;
 
-        private String numb;
+    private String numb;
 
-        // Constructors, getters, and setters
+    // Constructors, getters, and setters
 
     public King(Long id, String name, String numb) {
         this.id = id;
         this.name = name;
-        this.numb =  numb;
+        this.numb = numb;
     }
 
-    public King(){
+    public King() {
 
 
     }
