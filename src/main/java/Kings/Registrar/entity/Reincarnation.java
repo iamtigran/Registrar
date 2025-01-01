@@ -14,7 +14,11 @@ public class Reincarnation {
 
     private String lastName;
 
-    private String reincarnatedDate;
+    private String branch;
+
+    private String reincarnationFamily;
+
+    private String reincarnationGeneration;
 
     private String attributes;
 
@@ -25,9 +29,13 @@ public class Reincarnation {
     public Reincarnation() {
     }
 
-    public Reincarnation(String name, String reincarnatedDate, String attributes, String lastName) {
+    public Reincarnation(
+            String name,
+            String reincarnationGeneration,
+            String attributes, String lastName, String reincarnationFamily) {
         this.name = name;
-        this.reincarnatedDate = reincarnatedDate;
+        this.reincarnationGeneration = reincarnationGeneration;
+        this.reincarnationFamily=reincarnationGeneration;
         this.lastName = lastName;
         this.attributes = attributes;
     }
@@ -44,16 +52,48 @@ public class Reincarnation {
         return lastName;
     }
 
-    public String getReincarnatedDate() {
-        return reincarnatedDate;
+    public String getReincarnationGeneration() {
+        return reincarnationGeneration;
     }
 
     public String getAttributes() {
         return attributes;
     }
 
+    public String getReincarnationFamily() {
+        return reincarnationFamily;
+    }
+
+    public String getBranch() {
+        return branch;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setReincarnationGeneration(String reincarnationGeneration) {
+        this.reincarnationGeneration = reincarnationGeneration;
+    }
+
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
+
+    public void setAttributes(String attributes) {
+        this.attributes = attributes;
+    }
+
     public void setOriginalPerson(OriginalPerson originalPerson) {
         this.originalPerson = originalPerson;
+    }
+
+    public void setReincarnationFamily(String reincarnationFamily) {
+        this.reincarnationFamily = reincarnationFamily;
     }
 
     @Override
@@ -62,7 +102,9 @@ public class Reincarnation {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", reincarnatedDate='" + reincarnatedDate + '\'' +
+                ", reincarnationGeneration='" + reincarnationGeneration + '\'' +
+                ", branch='" + branch + '\'' +
+                ", reincarnationFamily='" + reincarnationFamily + '\'' +
                 ", attributes='" + attributes + '\'' +
                 '}';
     }

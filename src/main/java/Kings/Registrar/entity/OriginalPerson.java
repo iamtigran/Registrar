@@ -18,7 +18,11 @@ public class OriginalPerson {
 
     private String lastName;
 
-    private String birthDate;
+    private String originalGeneration;
+
+    private String branch;
+
+    private String originalFamily;
 
     private String attributes;
 
@@ -28,9 +32,10 @@ public class OriginalPerson {
     public OriginalPerson() {
     }
 
-    public OriginalPerson(String name, String birthDate, String attributes,String lastName) {
+    public OriginalPerson(String name, String originalGeneration, String attributes,String lastName, String branch) {
         this.name = name;
-        this.birthDate = birthDate;
+        this.originalGeneration = originalGeneration;
+        this.branch=branch;
         this.attributes = attributes;
         this.lastName = lastName;
     }
@@ -47,12 +52,18 @@ public class OriginalPerson {
         return lastName;
     }
 
-    public String getBirthDate() {
-        return birthDate;
+    public String getOriginalGeneration() {
+        return originalGeneration;
     }
 
     public String getAttributes() {
         return attributes;
+    }
+
+    public String getBranch(){return branch;}
+
+    public String getOriginalFamily() {
+        return originalFamily;
     }
 
     public void setName(String name) {
@@ -63,12 +74,20 @@ public class OriginalPerson {
         this.lastName = lastName;
     }
 
-    public void setBirthDate(String birthDate) {
-        this.birthDate = birthDate;
+    public void setOriginalGeneration(String originalGeneration) {
+        this.originalGeneration = originalGeneration;
     }
 
     public void setAttributes(String attributes) {
         this.attributes = attributes;
+    }
+
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
+
+    public void setOriginalFamily(String originalFamily) {
+        this.originalFamily = originalFamily;
     }
 
     public List<Reincarnation> getReincarnations() {
@@ -86,8 +105,10 @@ public class OriginalPerson {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", lastname='" + lastName + '\'' +
-                ", birthDate='" + birthDate + '\'' +
+                ", birthDate='" + originalGeneration + '\'' +
                 ", attributes='" + attributes + '\'' +
+                ", branch='" + branch + '\'' +
+                ", originalFamily='" + originalFamily + '\'' +
                 ", reincarnations=" + reincarnations.size() +
                 '}';
     }
